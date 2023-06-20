@@ -1,0 +1,16 @@
+{
+  "defaultSchema": "dataform",
+  "assertionSchema": "dataform_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "doit-playground-bq-mgmt",
+  "defaultLocation": "US",
+  "vars": {
+           "assigned_project":"'nadav-playground'",
+           "assignment_id":"`df_se_assignment`",
+           "reservation_name":"`doit-playground-bq-mgmt.region-us.nadav-standard`",
+           "region":"region-us",
+           "prod_max_configurtion":"0",
+           "prod_reservation_name":"`doit-playground-bq-mgmt.region-us.nadav-enterprise`"
+          }
+}
+    
