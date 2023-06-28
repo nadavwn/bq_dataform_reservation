@@ -15,7 +15,7 @@ END FOR;
 END;
 
 CREATE ASSIGNMENT
-${dataform.projectConfig.vars.reservation_name}.${dataform.projectConfig.vars.assignment_id}
+${dataform.projectConfig.vars.reservation_prefix}.${dataform.projectConfig.vars.reservation_name}.${dataform.projectConfig.vars.assignment_id}
 OPTIONS(
 assignee=CONCAT("projects/",${dataform.projectConfig.vars.assigned_project}),
 job_type="QUERY")

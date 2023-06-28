@@ -1,5 +1,5 @@
 config { type: "operations" }
 ALTER RESERVATION
-${dataform.projectConfig.vars.prod_reservation_name}
+${dataform.projectConfig.vars.reservation_prefix}.${dataform.projectConfig.vars.prod_reservation_name}
 SET OPTIONS (
-autoscale_max_slots = ${dataform.projectConfig.vars.prod_max_configurtion})
+autoscale_max_slots =${dataform.projectConfig.vars.prod_max_configurtion})

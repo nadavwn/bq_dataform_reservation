@@ -6,11 +6,12 @@
   "defaultLocation": "US",
   "vars": {
            "assigned_project":"'nadav-playground'",
-           "assignment_id":"`df_se_assignment`",
-           "reservation_name":"`doit-playground-bq-mgmt.region-us.nadav-standard`",
+           "assignment_id":"`df_rd_assignment`",
+           "reservation_prefix":"`doit-playground-bq-mgmt.region-us`",
+           "reservation_name":"`nadav-rd`",
            "region":"region-us",
            "prod_max_configurtion":"0",
-           "prod_reservation_name":"`doit-playground-bq-mgmt.region-us.nadav-enterprise`"
+           "prod_reservation_name":"`nadav-prod`"
           }
 }
     
