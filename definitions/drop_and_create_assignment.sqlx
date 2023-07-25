@@ -1,7 +1,5 @@
 config {type: "operations"}
 
-// sss
-
 BEGIN
 CREATE TEMP TABLE to_drop (drop_string STRING) AS (
 SELECT
