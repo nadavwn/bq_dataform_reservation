@@ -1,0 +1,21 @@
+config {type: "operations"}
+
+BEGIN
+CREATE TEMP TABLE to_drop (drop_string STRING) AS (
+SELECT
+CONCAT("DROP ASSIGNMENT IF EXISTS `",project_id,".",SPLIT(ddl,".")[OFFSET(1)],".",reservation_name,".",assignment_id,"`")
+FROM
+${dataform.projectConfig.vars.region}.INFORMATION_SCHEMA.ASSIGNMENTS_BY_PROJECT
+WHERE
+assignee_id = ${dataform.projectConfig.vars.assigned_project} AND job_type = 'QUERY' );
+FOR drop_statement IN (
+SELECT drop_string FROM to_drop)
+DO EXECUTE IMMEDIATE drop_statement.drop_string;
+END FOR;
+END;
+
+CREATE ASSIGNMENT
+${dataform.projectConfig.vars.reservation_prefix}.${dataform.projectConfig.vars.reservation_name}.${dataform.projectConfig.vars.assignment_id}
+OPTIONS(
+assignee=CONCAT("projects/",${dataform.projectConfig.vars.assigned_project}),
+job_type="QUERY")
